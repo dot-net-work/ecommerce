@@ -25,7 +25,7 @@ namespace Ecommerce.WebApp
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles();
             app.UseMvcWithDefaultRoute();
         }
     }
