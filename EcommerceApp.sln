@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EcommerceApp", "EcommerceApp\EcommerceApp.csproj", "{DF15D767-8713-4FC3-ACE8-44E8AEFCC81B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldMVCApp", "HelloWorldMVCApp\HelloWorldMVCApp.csproj", "{FA3EC120-88C0-4CB9-A646-9C72736ADC71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF15D767-8713-4FC3-ACE8-44E8AEFCC81B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF15D767-8713-4FC3-ACE8-44E8AEFCC81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF15D767-8713-4FC3-ACE8-44E8AEFCC81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF15D767-8713-4FC3-ACE8-44E8AEFCC81B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA3EC120-88C0-4CB9-A646-9C72736ADC71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA3EC120-88C0-4CB9-A646-9C72736ADC71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA3EC120-88C0-4CB9-A646-9C72736ADC71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA3EC120-88C0-4CB9-A646-9C72736ADC71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8CC1EB0D-490E-4686-9DA9-C5FB7D57D9EC}
+	EndGlobalSection
+EndGlobal
