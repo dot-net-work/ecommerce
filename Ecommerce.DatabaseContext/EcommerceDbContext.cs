@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Text;
-using EcommerceApp.DatabaseContext.FluentConfiguration;
-using EcommerceApp.Models;
+﻿using Ecommerce.DatabaseContext.FluentConfiguration;
+using Ecommerce.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EcommerceApp.DatabaseContext
+namespace Ecommerce.DatabaseContext
 {
     public class EcommerceDbContext:DbContext
     {

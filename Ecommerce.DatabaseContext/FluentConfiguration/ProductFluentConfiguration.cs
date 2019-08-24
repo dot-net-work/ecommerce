@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using EcommerceApp.Models;
+﻿using Ecommerce.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace EcommerceApp.DatabaseContext.FluentConfiguration
+namespace Ecommerce.DatabaseContext.FluentConfiguration
 {
     class ProductFluentConfiguration:IEntityTypeConfiguration<Product>
     {

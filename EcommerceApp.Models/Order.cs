@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace EcommerceApp.Models
+namespace Ecommerce.Models
 {
     public class Order
     {

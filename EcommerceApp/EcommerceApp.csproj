@@ -6,15 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20190726132257_Initial-2.cs" />
-    <Compile Remove="Migrations\20190727150016_Category_Introduce.cs" />
-    <Compile Remove="Migrations\20190727150056_Product_Category.cs" />
-    <Compile Remove="Migrations\20190802150517_Product_CategoryIdAdded.cs" />
-    <Compile Remove="Migrations\20190802150634_Product_CategoryIdAdded.cs" />
-    <Compile Remove="Migrations\20190803144114_Product_Name_Required.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.2.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.2.0" />

@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using EcommerceApp.DatabaseContext;
-using EcommerceApp.Models;
+using Ecommerce.DatabaseContext;
+using Ecommerce.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace EcommerceApp.Repositories
+namespace Ecommerce.Repositories
 {
     public class CategoryRepository
     {
