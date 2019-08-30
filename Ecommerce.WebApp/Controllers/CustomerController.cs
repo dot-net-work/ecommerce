@@ -19,8 +19,7 @@ namespace Ecommerce.WebApp.Controllers
         public IActionResult Index()
         {
             var customers = _customerRepository.GetAll();
-            ViewBag.Customers = customers;
-            return View();
+            return View(customers);
         }
 
         public IActionResult Create()
@@ -37,9 +36,8 @@ namespace Ecommerce.WebApp.Controllers
                 if (isAdded)
                 {
                     var customers = _customerRepository.GetAll();
-                    ViewData["Customers"] = customers;
                     ViewBag.SuccessMessage = "Saved Successfully!";
-                    return View("Index");
+                    return View("Index",customers);
                 }
             }
             return View();
