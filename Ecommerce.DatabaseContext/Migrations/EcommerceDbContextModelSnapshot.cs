@@ -42,7 +42,8 @@ namespace Ecommerce.DatabaseContext.Migrations
 
                     b.Property<int>("LoyaltyPoint");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
