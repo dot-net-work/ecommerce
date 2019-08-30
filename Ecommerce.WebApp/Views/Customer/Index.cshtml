@@ -1,8 +1,59 @@
-﻿
+﻿@using Ecommerce.Models
+
+@{
+    List<Customer> customers = ViewBag.Customers as List<Customer>;
+
+}
+
 <html>
 
-<head></head>
+<head>
+    <title>Customer List</title>
+    <link href="~/bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
 <body>
-<h1> Customer Created Successfully!</h1>
+
+
+
+
+<div class="container">
+    @if (ViewBag.SuccessMessage != null)
+    {
+        <div class="alert alert-success">
+            @ViewBag.SuccessMessage
+        </div>
+    }
+    
+    <h1>Customer List</h1>
+
+    <div class="row ">
+        <a href="/customer/create" class="btn btn-primary">Create Customer</a>
+    </div>
+    <div class="row">
+        <table class="table table-striped table-responsive table-hover">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th> Address </th>
+                <th> Loyalty Point </th>
+            </tr>
+
+
+            </thead>
+            <tbody>
+            @foreach (var customer in customers)
+            {
+                <tr>
+                    <td>@customer.Name</td>
+                    <td>@customer.Address</td>
+                    <td>@customer.LoyaltyPoint</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
 </body>
 </html>
