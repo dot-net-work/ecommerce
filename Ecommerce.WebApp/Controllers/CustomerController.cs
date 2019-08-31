@@ -24,7 +24,10 @@ namespace Ecommerce.WebApp.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var customers = _customerRepository.GetAll();
+            var model  = new Customer();
+            model.CustomerList = customers;
+            return View(model);
         }
 
         [HttpPost]
@@ -35,12 +38,16 @@ namespace Ecommerce.WebApp.Controllers
                 bool isAdded = _customerRepository.Add(model);
                 if (isAdded)
                 {
-                    var customers = _customerRepository.GetAll();
                     ViewBag.SuccessMessage = "Saved Successfully!";
-                    return View("Index",customers);
                 }
             }
-            return View();
+            else
+            {
+                ViewBag.ErrorMessage = "Operation Failed!";
+            }
+            
+            model.CustomerList = _customerRepository.GetAll(); ;
+            return View(model);
         }
 
 

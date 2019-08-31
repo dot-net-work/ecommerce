@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ecommerce.Models
 {
@@ -13,5 +15,8 @@ namespace Ecommerce.Models
 
         [Required]
         public int LoyaltyPoint { get; set; }
+
+        [NotMapped]
+        public  List<Customer> CustomerList { get; set; }
     }
 }

@@ -3,12 +3,7 @@
 
 
 <div class="container">
-    @if (ViewBag.SuccessMessage != null)
-    {
-        <div class="alert alert-success">
-            @ViewBag.SuccessMessage
-        </div>
-    }
+    <partial name="~/Views/Shared/Common/_SuccessMessage.cshtml"/>
     
     <h1>Customer List</h1>
 
