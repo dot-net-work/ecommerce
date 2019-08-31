@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Ecommerce.Models;
 using Ecommerce.Repositories;
+using Ecommerce.WebApp.Models.Customer;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.WebApp.Controllers
@@ -12,9 +13,9 @@ namespace Ecommerce.WebApp.Controllers
     {
         private CustomerRepository _customerRepository;
 
-        public CustomerController()
+        public CustomerController(CustomerRepository repository)
         {
-            _customerRepository = new CustomerRepository();
+            _customerRepository = repository;
         }
         public IActionResult Index()
         {
@@ -25,17 +26,24 @@ namespace Ecommerce.WebApp.Controllers
         public IActionResult Create()
         {
             var customers = _customerRepository.GetAll();
-            var model  = new Customer();
+            var model  = new CustomerCreateViewModel();
             model.CustomerList = customers;
             return View(model);
         }
 
         [HttpPost]
-        public IActionResult Create(Customer model)
+        public IActionResult Create(CustomerCreateViewModel model)
         {
             if (ModelState.IsValid)
             {
-                bool isAdded = _customerRepository.Add(model);
+                var customer = new Customer()
+                {
+                    Name=model.Name,
+                    Address = model.Address,
+                    LoyaltyPoint = model.LoyaltyPoint
+                };
+
+                bool isAdded = _customerRepository.Add(customer);
                 if (isAdded)
                 {
                     ViewBag.SuccessMessage = "Saved Successfully!";

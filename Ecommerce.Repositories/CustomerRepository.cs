@@ -11,9 +11,9 @@ namespace Ecommerce.Repositories
     {
         private EcommerceDbContext _db;
 
-        public CustomerRepository()
+        public CustomerRepository(EcommerceDbContext db)
         {
-            _db = new EcommerceDbContext();
+            _db = db;
         }
         public bool Add(Customer customer)
         {

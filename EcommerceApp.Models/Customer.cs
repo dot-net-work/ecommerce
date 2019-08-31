@@ -6,6 +6,10 @@ namespace Ecommerce.Models
 {
     public class Customer
     {
+        public Customer()
+        {
+          
+        }
         public int Id { get; set; }
         
         [Required(ErrorMessage = "Please provide Name!")]
@@ -15,8 +19,6 @@ namespace Ecommerce.Models
 
         [Required]
         public int LoyaltyPoint { get; set; }
-
-        [NotMapped]
-        public  List<Customer> CustomerList { get; set; }
+        
     }
 }
