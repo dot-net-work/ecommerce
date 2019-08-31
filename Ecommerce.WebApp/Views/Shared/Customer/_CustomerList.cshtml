@@ -1,0 +1,25 @@
+﻿@model List<Ecommerce.Models.Customer>
+
+<div class="row">
+    <table class="table table-striped table-responsive table-hover">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th> Address </th>
+            <th> Loyalty Point </th>
+        </tr>
+
+
+        </thead>
+        <tbody>
+        @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.Name</td>
+                <td>@customer.Address</td>
+                <td>@customer.LoyaltyPoint</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

@@ -43,5 +43,12 @@ namespace Ecommerce.WebApp.Controllers
             return View();
         }
 
+
+        public PartialViewResult CustomerListPartial()
+        {
+            var customers = _customerRepository.GetAll();
+
+            return PartialView("Customer/_CustomerList", customers);
+        }
     }
 }
