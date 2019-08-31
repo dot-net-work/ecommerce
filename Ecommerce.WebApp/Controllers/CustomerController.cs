@@ -47,7 +47,6 @@ namespace Ecommerce.WebApp.Controllers
         public PartialViewResult CustomerListPartial()
         {
             var customers = _customerRepository.GetAll();
-
             return PartialView("Customer/_CustomerList", customers);
         }
     }
