@@ -6,6 +6,7 @@ namespace Ecommerce.DatabaseContext
 {
     public class EcommerceDbContext:DbContext
     {
+        public long CurrentUserId { get; set; }
        public EcommerceDbContext()
         {
           

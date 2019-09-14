@@ -3,13 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Models", "EcommerceApp.Models\Ecommerce.Models.csproj", "{D92607BA-D96B-4376-8BA6-D987A0BFC873}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Models", "EcommerceApp.Models\Ecommerce.Models.csproj", "{D92607BA-D96B-4376-8BA6-D987A0BFC873}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Repositories", "Ecommerce.Repositories\Ecommerce.Repositories.csproj", "{E0293663-B284-45D6-A0B1-7C7809F2F093}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Repositories", "Ecommerce.Repositories\Ecommerce.Repositories.csproj", "{E0293663-B284-45D6-A0B1-7C7809F2F093}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.DatabaseContext", "Ecommerce.DatabaseContext\Ecommerce.DatabaseContext.csproj", "{7D47E8D0-4564-4183-9833-BFC2ECE71118}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.DatabaseContext", "Ecommerce.DatabaseContext\Ecommerce.DatabaseContext.csproj", "{7D47E8D0-4564-4183-9833-BFC2ECE71118}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.WebApp", "Ecommerce.WebApp\Ecommerce.WebApp.csproj", "{21F7A12F-D764-4B27-A343-389EE4AEAAD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.WebApp", "Ecommerce.WebApp\Ecommerce.WebApp.csproj", "{21F7A12F-D764-4B27-A343-389EE4AEAAD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.BLL", "Ecommerce.BLL\Ecommerce.BLL.csproj", "{4DF59EEA-C40D-44C9-B1BF-9A94B53B2EA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Abstractions", "Ecommerce.Abstractions\Ecommerce.Abstractions.csproj", "{136D4F3B-3652-410B-B4F8-8E1E2CE0720E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{21F7A12F-D764-4B27-A343-389EE4AEAAD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21F7A12F-D764-4B27-A343-389EE4AEAAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21F7A12F-D764-4B27-A343-389EE4AEAAD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DF59EEA-C40D-44C9-B1BF-9A94B53B2EA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DF59EEA-C40D-44C9-B1BF-9A94B53B2EA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DF59EEA-C40D-44C9-B1BF-9A94B53B2EA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DF59EEA-C40D-44C9-B1BF-9A94B53B2EA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{136D4F3B-3652-410B-B4F8-8E1E2CE0720E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{136D4F3B-3652-410B-B4F8-8E1E2CE0720E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{136D4F3B-3652-410B-B4F8-8E1E2CE0720E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{136D4F3B-3652-410B-B4F8-8E1E2CE0720E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

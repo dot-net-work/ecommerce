@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ecommerce.Abstractions.BLL;
+using Ecommerce.BLL;
 using Ecommerce.Models;
 using Ecommerce.Repositories;
 using Ecommerce.WebApp.Models.Customer;
@@ -11,23 +13,23 @@ namespace Ecommerce.WebApp.Controllers
 {
     public class CustomerController:Controller
     {
-        private CustomerRepository _customerRepository;
+        private ICustomerManager _customerManager;
 
-        public CustomerController(CustomerRepository repository)
+        public CustomerController(ICustomerManager customerManager)
         {
-            _customerRepository = repository;
+            _customerManager = customerManager;
         }
         public IActionResult Index()
         {
-            var customers = _customerRepository.GetAll();
+            var customers = _customerManager.GetAll();
             return View(customers);
         }
 
         public IActionResult Create()
         {
-            var customers = _customerRepository.GetAll();
+            var customers = _customerManager.GetAll();
             var model  = new CustomerCreateViewModel();
-            model.CustomerList = customers;
+            model.CustomerList = customers.ToList();
             return View(model);
         }
 
@@ -43,7 +45,7 @@ namespace Ecommerce.WebApp.Controllers
                     LoyaltyPoint = model.LoyaltyPoint
                 };
 
-                bool isAdded = _customerRepository.Add(customer);
+                bool isAdded = _customerManager.Add(customer);
                 if (isAdded)
                 {
                     ViewBag.SuccessMessage = "Saved Successfully!";
@@ -54,14 +56,14 @@ namespace Ecommerce.WebApp.Controllers
                 ViewBag.ErrorMessage = "Operation Failed!";
             }
             
-            model.CustomerList = _customerRepository.GetAll(); ;
+            model.CustomerList = _customerManager.GetAll().ToList(); ;
             return View(model);
         }
 
 
         public PartialViewResult CustomerListPartial()
         {
-            var customers = _customerRepository.GetAll();
+            var customers = _customerManager.GetAll();
             return PartialView("Customer/_CustomerList", customers);
         }
     }

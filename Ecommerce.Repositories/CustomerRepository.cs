@@ -2,28 +2,26 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Ecommerce.Abstractions.Repositories;
 using Ecommerce.DatabaseContext;
 using Ecommerce.Models;
+using Ecommerce.Repositories.Base;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Repositories
 {
-    public class CustomerRepository
+    public class CustomerRepository:EFRepository<Customer>,ICustomerRepository
     {
         private EcommerceDbContext _db;
 
-        public CustomerRepository(EcommerceDbContext db)
+
+        public CustomerRepository(EcommerceDbContext db) : base(db)
         {
             _db = db;
         }
-        public bool Add(Customer customer)
+        public ICollection<Customer> GetByAddress(string address)
         {
-            _db.Customers.Add(customer);
-            return _db.SaveChanges() > 0;
-        }
-
-        public List<Customer> GetAll()
-        {
-            return _db.Customers.ToList();
+            return _db.Customers.Where(c => c.Address.Contains(address)).ToList();
         }
     }
 }

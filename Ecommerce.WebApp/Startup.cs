@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ecommerce.Abstractions.BLL;
+using Ecommerce.Abstractions.Repositories;
+using Ecommerce.BLL;
 using Ecommerce.DatabaseContext;
 using Ecommerce.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Ecommerce.WebApp
@@ -18,7 +22,9 @@ namespace Ecommerce.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddTransient<CustomerRepository>();
+            services.AddTransient<ICustomerManager,CustomerManager>();
+            services.AddTransient<ICustomerRepository,CustomerRepository>();
+            services.AddTransient<DbContext,EcommerceDbContext>();
             services.AddTransient<EcommerceDbContext>();
         }
 
