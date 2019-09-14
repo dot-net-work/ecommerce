@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ecommerce.Abstractions\Ecommerce.Abstractions.csproj" />
+    <ProjectReference Include="..\Ecommerce.BLL\Ecommerce.BLL.csproj" />
+    <ProjectReference Include="..\Ecommerce.DatabaseContext\Ecommerce.DatabaseContext.csproj" />
+    <ProjectReference Include="..\Ecommerce.Repositories\Ecommerce.Repositories.csproj" />
+    <ProjectReference Include="..\EcommerceApp.Models\Ecommerce.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.dependencyinjection.abstractions\2.2.0\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Ecommerce.Abstractions.BLL;
 using Ecommerce.BLL;
 using Ecommerce.Models;
+using Ecommerce.Models.RazorViewModels.Customer;
 using Ecommerce.Repositories;
-using Ecommerce.WebApp.Models.Customer;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.WebApp.Controllers
@@ -14,10 +15,12 @@ namespace Ecommerce.WebApp.Controllers
     public class CustomerController:Controller
     {
         private ICustomerManager _customerManager;
+        private IMapper _mapper;
 
-        public CustomerController(ICustomerManager customerManager)
+        public CustomerController(ICustomerManager customerManager,IMapper mapper)
         {
             _customerManager = customerManager;
+            _mapper = mapper;
         }
         public IActionResult Index()
         {
@@ -38,12 +41,7 @@ namespace Ecommerce.WebApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                var customer = new Customer()
-                {
-                    Name=model.Name,
-                    Address = model.Address,
-                    LoyaltyPoint = model.LoyaltyPoint
-                };
+                var customer = _mapper.Map<Customer>(model);
 
                 bool isAdded = _customerManager.Add(customer);
                 if (isAdded)

@@ -15,9 +15,9 @@ namespace Ecommerce.Repositories
         private EcommerceDbContext _db;
 
 
-        public CustomerRepository(EcommerceDbContext db) : base(db)
+        public CustomerRepository(DbContext db) : base(db)
         {
-            _db = db;
+            _db = db as EcommerceDbContext;
         }
         public ICollection<Customer> GetByAddress(string address)
         {

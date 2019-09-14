@@ -11,9 +11,9 @@ namespace Ecommerce.Repositories
     {
         private EcommerceDbContext _db;
 
-        public CategoryRepository(EcommerceDbContext db):base(db)
+        public CategoryRepository(DbContext db):base(db)
         {
-            _db = db;
+            _db = db as EcommerceDbContext;
         }
         
         public void LoadProducts(Category category)
