@@ -9,6 +9,6 @@ namespace Ecommerce.Models
         public string OrderNo { get; set; }
         public DateTime OrderDate { get; set; }
 
-        public List<ProductOrder> Products { get; set; }
+        public virtual List<ProductOrder> Products { get; set; }
     }
 }

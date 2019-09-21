@@ -21,7 +21,7 @@ namespace Ecommerce.DatabaseContext
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder
-                .UseLazyLoadingProxies(false)
+                .UseLazyLoadingProxies(true)
                 .UseSqlServer("Server=(local);Database=EcommerceDb4; Integrated Security=true");
         }
 
@@ -39,6 +39,8 @@ namespace Ecommerce.DatabaseContext
                 .HasOne(pt => pt.Order)
                 .WithMany(t => t.Products)
                 .HasForeignKey(pt => pt.OrderId);
+
+            modelBuilder.Entity<Product>().HasQueryFilter(p => p.IsActive);
         }
 
     

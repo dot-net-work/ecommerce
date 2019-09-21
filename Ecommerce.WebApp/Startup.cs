@@ -16,6 +16,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
+using Microsoft.AspNetCore.Mvc.Formatters.Xml;
+
 
 namespace Ecommerce.WebApp
 {
@@ -27,7 +29,14 @@ namespace Ecommerce.WebApp
         {
             ServicesConfiguration.ConfigureServices(services);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddMvc();
+            services.AddMvc(options =>
+                {
+                    options.RespectBrowserAcceptHeader = true;
+                 })
+                .AddXmlSerializerFormatters()
+               .AddJsonOptions(
+                    options => options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                ); 
             
             
             

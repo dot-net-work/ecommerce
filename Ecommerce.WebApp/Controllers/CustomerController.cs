@@ -58,6 +58,11 @@ namespace Ecommerce.WebApp.Controllers
             return View(model);
         }
 
+        public IActionResult Get()
+        {
+            var customers = _customerManager.GetAll();
+            return Json(customers);
+        }
 
         public PartialViewResult CustomerListPartial()
         {
