@@ -5,7 +5,7 @@ namespace Ecommerce.Models
 {
    public class Product
     {
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
         public DateTime? ExpireDate { get; set; }

@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20190920145052_Product_PrimaryKey_Long.cs" />
+    <Compile Remove="Migrations\20190920145804_Product_PrimaryKey_Long.cs" />
+    <Compile Remove="Migrations\20190920145934_Product_PrimaryKey_Long.cs" />
+    <Compile Remove="Migrations\20190920150507_Product_PrimaryKey_Long.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="2.2.6" />
     <PackageReference Include="microsoft.entityframeworkcore.sqlserver" Version="2.2.6" />
     <PackageReference Include="microsoft.entityframeworkcore.tools" Version="2.2.6">
