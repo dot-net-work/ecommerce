@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Ecommerce.Abstractions.BLL;
 using Ecommerce.Models;
 using Ecommerce.Models.APIViewModels;
@@ -14,20 +16,24 @@ namespace Ecommerce.WebApp.Controllers.API
     public class ProductController:ControllerBase
     {
         private IProductManager _productManager;
-        public ProductController(IProductManager productManager)
+        private IMapper _mapper;
+        public ProductController(IProductManager productManager,IMapper mapper)
         {
             _productManager = productManager;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult Get([FromQuery] ProductSearchCriteriaVM criteria)
         {
             var products = _productManager.GetByCriteria(criteria);
+            
                 
 
             if (products != null && products.Any())
             {
-                return Ok(products);
+                var productDtos = _mapper.Map<ICollection<ProductDto>>(products);
+                return Ok(productDtos);
             }
 
             return NoContent();
