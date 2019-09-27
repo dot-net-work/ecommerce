@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ecommerce.Models
 {
@@ -9,9 +10,13 @@ namespace Ecommerce.Models
             Products = new List<Product>();
         }
 
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
+        public long? ParentId { get; set; }
+        public Category Parent { get; set; }
 
+       [InverseProperty("Parent")]
+        public virtual List<Category> Childs { get; set; }
         public virtual  List<Product> Products { get; set; }
 
     }

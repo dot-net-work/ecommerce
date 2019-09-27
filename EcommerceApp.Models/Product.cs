@@ -22,9 +22,9 @@ namespace Ecommerce.Models
 
         public bool IsActive { get; set; }  
 
-        public int CategoryId { get; set; }
+        public long CategoryId { get; set; }
         public virtual Category Category { get; set; }
-
+       
         public virtual List<ProductOrder> Orders { get; set; }
 
     }

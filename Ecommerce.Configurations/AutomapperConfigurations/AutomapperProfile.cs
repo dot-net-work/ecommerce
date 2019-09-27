@@ -15,6 +15,7 @@ namespace Ecommerce.Configurations.AutomapperConfigurations
             CreateMap<CustomerCreateViewModel, Customer>();
             CreateMap<Customer, CustomerCreateViewModel>();
             CreateMap<Product, ProductDto>();
+            
 
         }
     }

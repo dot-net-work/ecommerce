@@ -30,7 +30,8 @@ namespace Ecommerce.WebApp
         {
             ServicesConfiguration.ConfigureServices(services);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddMvc().AddMvcOptions
+            services.AddMvc()
+                .AddMvcOptions
                 (options =>
                 {
                     options.RespectBrowserAcceptHeader = true;

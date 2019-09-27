@@ -43,6 +43,11 @@ namespace Ecommerce.Repositories
                     products = products.Where(c => c.Price <= criteria.ToPrice);
                 }
 
+                if (criteria.CategoryId > 0)
+                {
+                    products = products.Where(c => c.CategoryId == criteria.CategoryId);
+                }
+
                 
             }
 

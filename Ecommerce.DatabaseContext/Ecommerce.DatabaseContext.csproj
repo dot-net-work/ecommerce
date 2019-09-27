@@ -9,6 +9,7 @@
     <Compile Remove="Migrations\20190920145804_Product_PrimaryKey_Long.cs" />
     <Compile Remove="Migrations\20190920145934_Product_PrimaryKey_Long.cs" />
     <Compile Remove="Migrations\20190920150507_Product_PrimaryKey_Long.cs" />
+    <Compile Remove="Migrations\20190927104020_Category_Id_long.cs" />
   </ItemGroup>
 
   <ItemGroup>
