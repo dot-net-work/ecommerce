@@ -11,9 +11,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Configurations
 {
-    public class ServicesConfiguration
+    public static class ServicesConfigurationExtension
     {
-        public static void ConfigureServices(IServiceCollection services)
+        public static void ConfigureServicesForEcommerce(this IServiceCollection services)
         {
             services.AddTransient<ICustomerManager, CustomerManager>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();

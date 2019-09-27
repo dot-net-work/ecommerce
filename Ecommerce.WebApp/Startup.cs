@@ -28,7 +28,7 @@ namespace Ecommerce.WebApp
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            ServicesConfiguration.ConfigureServices(services);
+            services.ConfigureServicesForEcommerce();
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddMvc()
                 .AddMvcOptions
@@ -54,7 +54,9 @@ namespace Ecommerce.WebApp
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
+           
             app.UseMvcWithDefaultRoute();
+            app.UseAuthentication();
         }
     }
 }
