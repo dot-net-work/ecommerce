@@ -80,6 +80,21 @@
 
         $('#productDropDown').change(() => {
             //product details will be shown in box
+            var productId = $('#productDropDown').val();
+            $.ajax({
+                url: "/product/getproductpartial",
+                type: "GET",
+                data: { id: productId },
+                success: (response) => {
+                    $("#productBox").removeClass('hidden');
+                    $('#productBox').html(response);
+                },
+                error: (response) => {
+                    $('#productBox').addClass('hidden');
+                   
+                }
+
+            });
         });
 
     </script>
