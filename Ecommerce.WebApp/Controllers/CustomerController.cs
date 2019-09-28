@@ -8,10 +8,12 @@ using Ecommerce.BLL;
 using Ecommerce.Models;
 using Ecommerce.Models.RazorViewModels.Customer;
 using Ecommerce.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.WebApp.Controllers
 {
+    [Authorize]
     public class CustomerController:Controller
     {
         private ICustomerManager _customerManager;
@@ -22,6 +24,8 @@ namespace Ecommerce.WebApp.Controllers
             _customerManager = customerManager;
             _mapper = mapper;
         }
+
+        [AllowAnonymous]
         public IActionResult Index()
         {
             var customers = _customerManager.GetAll();

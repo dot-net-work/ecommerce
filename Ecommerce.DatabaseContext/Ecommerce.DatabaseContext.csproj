@@ -10,6 +10,7 @@
     <Compile Remove="Migrations\20190920145934_Product_PrimaryKey_Long.cs" />
     <Compile Remove="Migrations\20190920150507_Product_PrimaryKey_Long.cs" />
     <Compile Remove="Migrations\20190927104020_Category_Id_long.cs" />
+    <Compile Remove="Migrations\20190928141444_Identity_Init.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +24,15 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EcommerceApp.Models\Ecommerce.Models.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.aspnetcore.identity.entityframeworkcore\2.2.0\lib\netstandard2.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Identity.Stores">
+      <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.identity.stores\2.2.0\lib\netstandard2.0\Microsoft.Extensions.Identity.Stores.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

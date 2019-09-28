@@ -1,13 +1,15 @@
 ﻿using Ecommerce.DatabaseContext.FluentConfiguration;
 using Ecommerce.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.DatabaseContext
 {
-    public class EcommerceDbContext : DbContext
+    public class EcommerceDbContext : IdentityDbContext<IdentityUser>
     {
         public long CurrentUserId { get; set; }
-        public EcommerceDbContext()
+        public EcommerceDbContext(DbContextOptions options):base(options)
         {
 
         }
@@ -27,6 +29,7 @@ namespace Ecommerce.DatabaseContext
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfiguration(new ProductFluentConfiguration());
             modelBuilder.Entity<ProductOrder>().HasKey(c => new { c.ProductId, c.OrderId });
 
