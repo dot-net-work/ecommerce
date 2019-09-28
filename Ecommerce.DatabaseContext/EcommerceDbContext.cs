@@ -4,12 +4,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.DatabaseContext
 {
-    public class EcommerceDbContext:DbContext
+    public class EcommerceDbContext : DbContext
     {
         public long CurrentUserId { get; set; }
-       public EcommerceDbContext()
+        public EcommerceDbContext()
         {
-          
+
         }
 
         public DbSet<Product> Products { get; set; }
@@ -22,7 +22,7 @@ namespace Ecommerce.DatabaseContext
         {
             optionsBuilder
                 .UseLazyLoadingProxies(true)
-                .UseSqlServer("Server=(local);Database=EcommerceDb4; Integrated Security=true");
+                .UseSqlServer("Server=(local);Database=EcommerceDb4_Auth; Integrated Security=true");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -43,6 +43,6 @@ namespace Ecommerce.DatabaseContext
             modelBuilder.Entity<Product>().HasQueryFilter(p => p.IsActive);
         }
 
-    
+
     }
 }
